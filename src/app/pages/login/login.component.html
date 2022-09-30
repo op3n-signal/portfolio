@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="main">
+                <div class="login">
+                    <form #f="ngForm" (submit)="logIn(f)">
+                       <div class="form-group">
+                            <label 
+                                for="username">Username:
+                            </label>
+                            <input 
+                                class="input form-control" 
+                                type="username" 
+                                name="username"
+                                [(ngModel)]="login.username"
+                                #loginUsername="ngModel"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label 
+                                for="password">Password:
+                            </label>
+                            <input 
+                                class="input form-control" 
+                                type="password"
+                                name="password"
+                                [(ngModel)]="login.password"
+                                #loginPassword="ngModel"
+                                required>
+                        </div>
+                        <button class="btn pointer" type="submit" [disabled]="f.invalid">Login</button> 
+                        <button class="btn" (click)="back()">Back</button>
+                    </form>   
+                </div> 
+            </div>
+           
+        </div>
+    </div>
+</div>

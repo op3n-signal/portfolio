@@ -1,0 +1,154 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="bar">
+            </div>
+        </div>
+    </div>
+    <!--the header that is sticky-->
+    <div class="about">
+        <h3 class="headings">{{ title }}</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="main-nav-area">
+                <div (mouseover)="expandNav()" (mouseleave)="closeNav()" class="side-nav">
+                    <ul (click)="scrollTo($event)" class="side-nav-list" #ul>
+                        <li><a>About Me</a></li>
+                        <li><a>Experience</a></li>
+                        <li><a>Skills</a></li>
+                        <li><a>Education</a></li>
+                        <li><a>Gallery</a></li>
+                    </ul>
+                    <span class="nav-open-icon nav-icon pointer"></span>
+                </div>
+                <div class="main-1 main-area">
+                    <!--What I love section-->
+                    <div id="about me" class="sub-section-1 sub-section main">
+                        <div class="para">
+                            <h4 class="sub-headings">How I got into programming?</h4>
+                            <br>
+                            <p>I was working on Sound Design and wanted to know more about a particular VST. So, I watched an interview with the
+                                creator, Steve Duda...<br><br>
+                                He talked about the way he created it, programmatically, and it really intrigued me. He spoke about it being years of work. I thought to be able to make something as fine-tuned as that was amazing!</p>
+                        </div>
+                        <figure class="para-figure">
+                            <img class="para-img" alt="steve duda interview about serum" title="steve duda interview"
+                                src="/assets/images/steve.webp">
+                            <figcaption>Steve Duda <a class="interview pointer"
+                                    href="https://www.youtube.com/watch?v=Cp0rtLaXBio" target="_blank">interview</a>
+                                talking about music software with Ableton</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="sub-section-2 sub-section main">
+                        <figure class="para-figure">
+                            <img class="para-img" alt="computer workstation" title="work desk"
+                                src="/assets/images/d.webp">
+                        </figure>
+                        <div class="para">
+                            <h4 class="sub-headings">My Daily Routine</h4>
+                            <br>
+                            <p>I treat my day like any work day. I get up around 9am and head straight to the coffee pot after I booted up my PC.<br><br>
+                                I tend to spend the first 30min on websites I need to be updated on (LinkedIn, Emails, Slack). Then the rest of the day goes to developing projects. (Planning, programming, break, more programming), until about 12am. </p>
+                        </div>
+                    </div>
+
+                    <div class="sub-section-3 sub-section main">
+                        <div class="para">
+                            <h4 class="sub-headings">What is my current status?</h4>
+                            <br>
+                            <p>I just completed my Woz U apprenticeship to work at Infosys. That being said, I am unemployed until further notice. Wish me luck in my interview. <br><br>
+                                If it doesn't work out, I will continue the hunt for the opportunity to get my foot in the door...if not, then I will take it as a sign that I need to create something on my own.
+                            </p>
+                        </div>
+                        <figure class="para-figure">
+                            <img class="para-img" alt="software engineers working" title="people working"
+                                src="/assets/images/team.webp">
+                        </figure>
+                    </div>
+
+                    <!--developer exp section-->
+                    <div id="experience" class="sub-section-4 sub-section main">
+                        <h4 class="headings">Experience</h4>
+                        <div *ngFor="let x of data" class="para">
+                            <p>Employer: <span class="indent">{{ x.employer }}</span></p>
+                            <br>
+                            <p>Employment Type: <span class="indent">{{ x.type }}</span></p>
+                            <br>
+                            <p>Position: <span class="indent">{{ x.position }}</span></p>
+                            <br>
+                            <p>Date: <span class="indent">{{ x.date }}</span></p>
+                            <br>
+                            <p>Duties: </p>
+                            <ul>
+                                <li class="indent">{{ x.duty1 }}</li>
+                                <li class="indent">{{ x.duty2 }}</li>
+                                <li class="indent">{{ x.duty3 }}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--skills section-->
+                    <div id="skills" class="sub-section-5 sub-section main">
+                        <h4 class="headings">Skills</h4><br>
+                        <div class="para para-skills" *ngFor="let b of skills">
+                            <div class="skill-details">
+                                <h4 class="sub-headings">{{ b.title }}</h4>
+                                <br>
+                                <ul>
+                                    <li *ngFor="let a of b.details">{{ a }}</li>
+                                </ul>
+                            </div>
+                            <div class="skill-list">
+                                <!--CSS icons-->
+                                    <div class="copy-skill-list" *ngIf="b.title === 'Front-End'; else back">
+                                        <span title="HTML5" class="icon-1 icon-0"></span>
+                                        <span title="CSS3" class="icon-2 icon-0"></span>
+                                        <span title="Sass" class="icon-3 icon-0"></span>
+                                        <span title="JavaScript" class="icon-4 icon-0"></span>
+                                        <span title="Angular" class="icon-5 icon-0"></span>
+                                        <span title="Bootstrap" class="icon-6 icon-0"></span>
+                                        <span title="ReactJS" class="icon-12 icon-0"></span>
+                                    </div>
+                                    <ng-template #back>
+                                        <div class="copy-skill-list">
+                                            <span title="PHP" class="icon-8 icon-0"></span>
+                                            <span title="c#" class="icon-9 icon-0"></span>
+                                            <span title="Net" class="icon-10 icon-0"></span>
+                                            <span title="Sqlite" class="icon-11 icon-0"></span>
+                                        </div>
+                                    </ng-template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--education section-->
+                    <div id="education" class="sub-section-6 sub-section main">
+                        <div class="para">
+                            <!--cert style resume info goes here-->
+                            <h4 class="headings">Education</h4><br>
+                            <div class="cert" *ngFor="let t of certs" #certs>
+                                <p>{{ t.cert }}</p>
+                                <p>{{ t.institute }}</p>
+                                <p>{{ t.date }}</p>
+                                <a class="interview" href="{{ t.link }}" target="_blank">credential</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--gallery section-->
+                    <div id="gallery" class="sub-section-7 main">
+                        <div class="para">
+                            <h4 class="headings">Gallery</h4>
+                            <div id="photos">
+                                <img *ngFor="let i of images" src="/assets/images/{{i.url}}" alt="{{i.alt}}" title="{{i.alt}}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

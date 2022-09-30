@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row" *ngIf="blog">
+        <div class="icons">
+            <span class="edit" (click)="sendToEditor()" title="edit"></span>
+            <span class="trash" (click)="delete(blog.id)" title="delete"></span>
+            <button class="btn btn-danger pull-right" (click)="back()">Back</button>
+        </div>
+        
+        <h3>{{ blog.title }}</h3>
+        <p [innerHtml]="blog.article"></p>
+    </div>
+</div>

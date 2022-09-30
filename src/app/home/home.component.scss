@@ -1,0 +1,186 @@
+@import '../app.component.scss';
+
+@mixin intros($k) {
+    position: relative;
+    padding: 20px;
+    top: 23vh;
+    margin: auto;
+    color: white;
+    border-radius: 3px;
+    font-size: 44px;
+    width: 700px;
+    font-weight: 600;
+    text-align: center;
+    animation: $k;
+    animation-delay: 2s;
+}
+
+
+.container {
+    width: 100%;
+    margin: auto;
+    z-index: 4;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(51, 192, 173);
+}
+
+a:hover {
+    color: rgb(248, 248, 239);
+}
+
+.img {
+    @include photoSet(url('/assets/images/back.webp'));
+    height: 750px;
+    width: 1700px;
+    margin: auto;
+}
+
+
+
+@keyframes ques {
+    0% {
+        right: -300px;
+    }
+    100% {
+        right: 0px;
+    }
+}
+
+
+@keyframes imagine {
+    0% {
+        background: rgba(0, 0, 0, 0.664);
+        transform: translateX(-100%);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.158);
+        transform: translateX(0%);
+    }
+}
+
+.tint {
+    @include same(height, width, 100%);
+    background: rgba(0, 0, 0, 0.158);
+    animation: imagine 4s ease;
+}
+
+@keyframes fade1 {
+    0% {
+        opacity: 1;
+    }
+    27% {
+        opacity: 1;
+    }
+    32% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+
+.intro {
+    @include intros(fade1 8s ease infinite); 
+}
+
+@keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    27% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    61% {
+        opacity: 1;
+    }
+    65% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+.intro2 {
+    @include intros(fade2 8s ease infinite); 
+    opacity: 0;
+}
+
+.step-text {
+    font-size: 1.8rem;
+    margin-left: 5px;
+    line-height: 24px;
+}
+
+@keyframes fade3 {
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    61% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 1;
+    }
+    93% {
+        opacity: 1;
+    }
+}
+.intro3 {
+    @include intros(fade3 8s ease infinite); 
+    opacity: 0;
+}
+
+
+@media (max-width: 1720px) {
+    .img {
+        width: 100%;
+    }
+
+    .more-text {
+        width: 95%;
+    }
+
+    .step-text {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .tint p {
+        font-size: 2.3em;
+    }
+
+    .intro, .intro2, .intro3 {
+        width: 100%;
+        top: 12vh;
+    }
+}
+
+@media (max-width: 450px) {
+    .intro, .intro2, .intro3 {
+
+        top: 10vh;
+    }
+
+    .tint p {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 350px) {
+    .tint p {
+        font-size: 1.6em;
+    }
+}

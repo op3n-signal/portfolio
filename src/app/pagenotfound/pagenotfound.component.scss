@@ -1,0 +1,29 @@
+@import '../app.component.scss';
+
+
+.container {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+}
+
+.link {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    color: white;
+    font-size: 18px;
+}

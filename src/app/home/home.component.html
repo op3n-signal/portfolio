@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="img">
+                <div class="tint">
+                    <p class="intro">Creative and Responsive Designs</p>
+                    <p class="intro2">Angular Front-End</p>
+                    <p class="intro3">.NET Core, PhP Back-End</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="designs">
+                <p class="first-p">I am open for freelance work!</p>
+                <p class="second-p"><a routerLink="/projects">Take a look</a> at projects I have made!</p>
+            </div>
+            <p class="same">Some articles from my blog:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="content">
+                <div *ngFor="let x of blogs" class="un" (mouseover)="slideUp($event)" (mouseleave)="slideDown($event)">
+                    <img src="{{ x.img }}" alt="{{ x.title }}" title="{{ x.title }}">
+                    <div class="tinty">
+                        <h4 class="description">{{ x.title }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="more">
+                <a href="#" routerLink="/blog">View blog</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dev-tv">
+                <h1>Latest from <span class="dev">dev</span> TV</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="video-container">
+                <div class="vid"><span class="spinner-video" *ngIf="loading"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="more">
+                <a href="#" routerLink="/dev-tv">dev TV</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="how">
+                <h2>About Me? "Who?...Me?"</h2>
+                <div class="steps">
+                    <div class="step step-1">
+                        <div class="step-tint">
+                            <h4>Languages</h4>
+                            <p class="step-text">JavaScript<br>CSS<br>HTML<br>C#<br>PhP<br>Sqlite<br>MySql</p>
+                        </div>
+                    </div>
+                    <div class="step step-2">
+                        <div class="step-tint">
+                            <h4>Libraries & Frameworks</h4>
+                            <p class="step-text">Angular 7+<br>.NET Core<br>Bootstrap<br>jQuery<br>scss<br>rxjs</p>
+                        </div>
+                    </div>
+                    <div class="step step-3">
+                        <div class="step-tint">
+                            <h4>Tools</h4>
+                            <p class="step-text">NPM<br>GitHub Desktop<br>VS Code<br>Visual Studio<br>Fiddler<br>DB Browser<br>Trello</p>
+                        </div>
+                    </div>
+                    <div class="step step-4">
+                        <div class="step-tint">
+                            <h4>Experience with...</h4>
+                            <p class="step-text">OOP<br>CRUD<br>MVC</p>
+                        </div>
+                    </div>
+                    <div class="step step-5">
+                        <div class="step-tint">
+                            <h4>Certifications</h4>
+                            <p class="step-text">-Data Visualization<br>-JavaScript Algorithms & Data Structures<br>-Responsive Web Design<br>-JavaScript: Build Real Projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="more">
+                    <a href="#" routerLink="/about">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

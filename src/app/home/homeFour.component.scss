@@ -1,0 +1,128 @@
+@import '../app.component.scss';
+
+.dev-tv {
+    width: 1700px;
+    margin: auto;
+    height: 100px;
+}
+
+.dev-tv h1 {
+    padding: 20px 0;
+    text-align: center;
+    border-top: solid 1px rgb(29, 29, 29);
+    margin: auto;
+    color: white;
+    font-size: 2rem;
+}
+
+.dev {
+    color: rgb(51, 192, 173);
+    font-size: 20px;
+}
+
+.content {
+    height: 300px;
+    margin: auto;
+    width: 1700px;
+    display: flex;
+}
+
+.content-active {
+    animation: grow 2.5s ease; 
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+img {
+    @include same(height, width, 100%);
+    transition: all 1.5s ease;
+}
+
+.un {
+    position: relative;
+}
+
+.un, .active-div {
+    width: 100%;
+}
+
+.description {
+    color: white;
+    padding: 5px 10px;
+    letter-spacing: 0px;
+}
+
+.tinty h4 {
+    font-weight: bolder;
+}
+
+/*change opacity and make an active class*/
+.sample {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.active-sample {
+    opacity: 1;
+}
+
+.tinty {
+    background: rgba(70, 70, 70, 0.63);
+    position: absolute;
+    @include same(bottom, left, 0);
+    height: 18%;
+    width: 100%;
+    transition: all 1s ease;
+}
+
+.active-tinty {
+    background: rgba(34, 34, 34, 0.788);
+    height: 50%;
+    transition: all 1s ease;
+}
+
+@media (max-width: 1720px) {
+    .dev-tv {
+        width: 100%;
+    }
+
+    .dev-tv h1, .content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1230px) {
+    .content {
+        height: auto;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+@media (max-width: 1020px) {
+    .content {
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+        min-width: 500px;
+    }
+}
+
+@media(max-width: 517px) {
+    .content {
+        min-width: unset;
+        width: 100%;
+    }
+}

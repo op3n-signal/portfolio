@@ -1,0 +1,44 @@
+@import '../../../app.component.scss';
+
+* {
+    font-size: 15px;
+}
+
+img {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    background: steelblue;
+}
+
+.length, .views, .uploaded {
+    padding: 0 3px;
+    background: rgba(0, 0, 0, 0.753);
+    color: white;
+    border-radius: 2px;
+    font-family: Tahoma, sans-serif;
+}
+
+.length {
+    position: absolute;
+    margin: 3px 0 0 6px;
+}
+
+.views {
+    position: absolute;
+    bottom: 30px;
+    margin: 0px 0 0 6px;
+}
+
+.uploaded {
+    position: absolute;
+    bottom: 30px;
+    right: 3%;
+}
+
+.title {
+    position: relative;
+    bottom: 0;
+    left: 10px;
+    color: rgb(221, 221, 221);
+}

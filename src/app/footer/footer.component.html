@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="more-text" id="theForm">
+                <br>
+                <p>Email me if you would like to get in touch!</p>
+                <form 
+                    *ngIf="messageStatus.length == 0;"
+                    #f="ngForm" 
+                    class="form" 
+                    (submit)="send(f)" 
+                    name="theForm">
+                    <div class="form-group">
+                        <input 
+                            class="form-control sub-input" 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email"
+                            [(ngModel)]="user.email" 
+                            #email="ngModel"
+                            required
+                            email>
+                        <span 
+                            class="help-block danger" 
+                            *ngIf="email.errors?.required && email.touched">
+                            The email is required
+                        </span>
+                        <!-- <span class="help-block danger" *ngIf="email.touched">
+                            That email format is not allowed
+                        </span> fix later -->
+                    </div>
+                    <div *ngIf="user.email" class="form-group">
+                        <textarea 
+                            class="form-control text-input" 
+                            type="text" 
+                            name="message" 
+                            placeholder="Enter Message"
+                            maxlength="300" 
+                            [(ngModel)]="user.message" 
+                            #message="ngModel" 
+                            required></textarea>
+                        <!--  fix later, make the message and submit appear only after the email has been given
+                        by a next btn -->
+                    </div>
+                    <button 
+                        class="btn btn-default" 
+                        type="submit" 
+                        name="submit" 
+                        [disabled]="f.invalid">Email</button>
+                    <span *ngIf="user.email">{{ success }}</span>
+                </form>
+                <div class="row">
+                    <div class="center-block">
+                        <span>{{ messageStatus }}</span><br>
+                        <button *ngIf="messageStatus.length > 0 && messageStatus != 'Waiting...';" class="btn btn-default" (click)="messageStatus = ''">Email again</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="heading">
+                <p class="icon pointer" routerLink="/">Client <span class="dev">dev</span></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="row bottom">
+        <div class="col-xs-6">
+            <ul class="something">
+                <li><a href="#" routerLink="/about">About Me</a></li>
+                <li><a href="#" routerLink="/dev-tv">dev TV</a></li>
+                <li><a href="#" routerLink="/projects">Projects</a></li>
+                <li><a href="#" routerLink="/blog">Blog</a></li>
+                <li><a href="#" routerLink="/login">Login</a></li>
+                <li><a href="#" routerLink="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-6">
+            <div class="logos">
+                <a href="https://www.linkedin.com/in/antonio-martinez-390915178/" target="_blank"><span
+                        class="linked"></span></a>
+                <a href="https://github.com/turtleafk" target="_blank"><span class="github"></span></a>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="to-top">
+                <a class="pointer" (click)="scrollTop()">Back to Top</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+@import '../app.component.scss';
+
+/*drop down list*/
+.drop-down::after {
+    font-family: FONTAWESOME;
+    content: "\f0d7";
+    padding: 0px 0 0 5px;
+    font-size: 10px;
+}
+
+.drop-down:hover::after {
+    content: "";
+}
+
+.drop-down {
+    color: rgb(224, 224, 224);
+    z-index: 999 !important;
+    position: absolute;
+    top: 0; 
+    left: 430px;
+}
+
+.drop-down-mobile, .drop-down {
+    display: none;
+}
+
+/*drop down list*/
+.drop-list {
+    flex-direction: column;
+    padding: 10px 0 0 10px;
+    line-height: 40px;
+    margin: 10px 0 0 0;
+    gap: 0;
+    display: none;
+    border: solid 1px rgb(53, 53, 53);
+    text-align: center;
+    padding: 8px;
+    width: 80px;
+}
+
+.drop-list-active {
+    display: block;
+}
+
+/*make header bigger only for the more button*/
+.header-expand-list {
+    height: 180px;
+    transition: all 0.8s ease;
+}
+
+@media (max-width: 1450px) {
+    .drop-down {
+        position: relative;
+        left: 0;
+    }
+
+    .drop-list {
+        position: absolute;
+        @include same(top, width, 90px);
+        margin: 0 0 0 10px;
+        height: 100px;
+        background: rgb(14, 14, 14);
+        text-align: left;
+        padding: 10px 15px 15px 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .drop-list {
+        top: 60px;
+    }
+}

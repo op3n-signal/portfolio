@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="project-header">
+                <h2>Projects</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="main-content">
+                <div class="project-photo enhance-detail" [style.background-image]="mainImage">
+                    <div *ngIf="imgLength > 1" class="arrows">
+                        <div (click)="prevphoto(mainImage)" class="left-arrow border arrow pointer"></div>
+                        <div (click)="nextphoto(mainImage)" class="right-arrow border arrow pointer"></div>
+                    </div>
+                </div>
+                <div class="project-info enhance-detail">
+                    <h3>{{ title }}</h3>
+                    <p>Status: {{ status }}</p>
+                    <!--details and link with info about project-->
+                    <li *ngFor="let y of details">
+                        - {{ y }}
+                    </li>
+                    <div class="link">
+                        <a href="{{ siteUrl }}" target="_blank">Visit Website</a>
+                    </div>
+                    <!--use ngIf to determine if I should display items-->
+                    <p>
+                        <span title="HTML5" class="icon-1 icon-0 html"></span>
+                        <span title="CSS3" class="icon-2 icon-0 css"></span>
+                        <span title="Sass" class="icon-3 icon-0 sass"></span>
+                        <span title="Bootstrap" class="icon-6 icon-0 bs"></span>
+                        <span title="JavaScript" class="icon-4 icon-0 js"></span>
+                        <span title="ReactJS" class="icon-12 icon-0 react"></span>
+                        <span title="Angular" class="icon-5 icon-0 ng"></span>
+                        <span title="PHP" class="icon-8 icon-0 php"></span>
+                        <span title="c#" class="icon-9 icon-0 cs"></span>
+                        <span title=".Net Core" class="icon-10 icon-0 net"></span>
+                        <span title="Sqlite" class="icon-11 icon-0 sql"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="flex-container">
+                <app-project
+                    (click)="displayProject(i)"
+                    class="project transition" 
+                    *ngFor="let x of basicProjectData; let i = index" 
+                    [attr.data-index]="i"
+                    [data]="x"></app-project>
+            </div>
+        </div>
+    </div>
+</div>

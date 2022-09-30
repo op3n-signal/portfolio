@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dev-tv">
+                <h1 id="main">devTV</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="video-container" [ngClass]="{'small-video-container': loading}">
+                <div class="main-video current-video"><span class="spinner-video" *ngIf="loading"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="video-collection">
+                <h4>Past Videos</h4>
+                <select (change)="reorder()" name="filter">
+                    <option *ngFor="let y of choices" value="{{ y }}">{{ y }}</option>
+                </select>
+                <div class="video-list">
+                    <div class="item-container" *ngFor="let video of videos; let i = index">
+                        <app-video-item class="pointer" (click)="playVideo(i)" [data]="{videoData: video, index: i}"></app-video-item>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

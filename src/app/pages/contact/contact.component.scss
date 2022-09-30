@@ -1,0 +1,56 @@
+@import '../../app.component.scss';
+
+
+a {
+    color: white;
+    font-size: 20px;
+}
+
+.container {
+    @include alot(flex, column, fixed, 0, unset, unset, unset);
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0, 0, 0);
+    z-index: 999;
+    justify-content: center;
+}
+
+.contact {
+    background: rgba(211, 211, 211, 0);
+    @include same(height, width, margin, auto);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+button {
+    margin-bottom: 10px;
+    background: unset;
+    border: none;
+    cursor: default;
+}
+
+.mail::after {
+    font-family: FONTAWESOME;
+    content: "\f0e0";
+}
+
+.phone::after {
+    font-family: FONTAWESOME;
+    content: "\f095";
+}
+
+.resume::after {
+    font-family: FONTAWESOME;
+    content: "\f15b";
+}
+
+.back::after {
+    font-family: FONTAWESOME;
+    content: "\f0e2";
+}
+
+.icon::after {
+    font-size: 16px;
+    padding-left: 7px; 
+}

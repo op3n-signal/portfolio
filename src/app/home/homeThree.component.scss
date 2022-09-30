@@ -1,0 +1,101 @@
+@import '../app.component.scss';
+
+.dev-link {
+    height: 40px;
+}
+
+
+/*images*/
+.step {
+    @include photoSet(url('/assets/images/proj.png'));
+    min-width: 250px;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.step-tint {
+    background: rgba(0, 0, 0, 0.753);
+    @include same(height, width, 100%);
+    padding: 10px;
+}
+
+.step-tint h4 {
+    font-size: 23px;
+    padding-bottom: 5px;
+    letter-spacing: 0;
+}
+
+.designs {
+    display: flex;
+    height: 200px;
+    padding: 80px 0;
+    width: 1700px;
+    margin: auto;
+    gap: 30px; 
+    border-bottom: solid 1px rgb(29, 29, 29);
+}
+
+.designs q, .designs a, .designs p {
+    font-size: 20px;
+}
+
+.first-p {
+    padding-bottom: 20px;
+}
+
+.first-p, .second-p {
+    flex: 1;
+}
+
+.designs p {
+    color: white;
+    animation: fadein 4s ease;
+
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.same {
+    color: white;
+    width: 1700px;
+    margin: auto;
+    padding: 20px 0;
+    font-size: 22px;
+
+}
+
+@media (max-width: 1720px) {
+    .same {
+        width: 100%;
+    }
+    
+    .designs {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1020px) {
+    .designs {
+        flex-direction: column;
+        gap: 0;
+        padding: 60px 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 597px) {
+    .step {
+        max-width: 80%;
+    }
+}

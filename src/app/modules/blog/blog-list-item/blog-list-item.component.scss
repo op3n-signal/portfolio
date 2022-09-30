@@ -1,0 +1,38 @@
+
+
+* {
+    color: rgb(233, 233, 233);
+}
+
+
+h3 {
+    font-size: 1.8em;
+    margin: 10px auto;
+}
+
+div {
+    margin: auto;
+    padding: 20px;
+}
+
+p {
+    line-height: 37px;
+    letter-spacing: 1px;
+}
+
+span {
+    font-size: 19px;
+}
+
+.trash::after {
+    font-family: FONTAWESOME;
+    content: "\f2ed";
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+.edit::after {
+    font-family: FONTAWESOME;
+    content: "\f4ff";
+    cursor: pointer;
+}

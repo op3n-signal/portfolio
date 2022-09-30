@@ -1,0 +1,96 @@
+@mixin alot($a, $b, $c, $d, $e, $f, $g) {
+    display: $a;
+    flex-direction: $b;
+    position: $c;
+    top: $d;
+    right: $e;
+    bottom: $f;
+    left: $g;
+}
+
+@mixin logo($x, $y, $z: unset) {
+    font-family: FontAwesome;
+    content: $x;
+    font-size: 26px;
+    color: $y;
+    height: $z;
+}
+
+@mixin same($values...) {
+    $length: length($values);
+    $value: nth($values, $length);
+
+    @for $i from 1 to $length {
+        #{nth($values, $i)}: $value;
+    }
+}
+
+@mixin photoSet($x, $y: cover, $z: center) {
+    background: $x;
+    background-repeat: no-repeat;
+    background-position: $z;
+    background-size: $y;
+}
+
+.container {
+    width: 100%;
+    background: black;
+}
+
+/*local*/
+
+.main-background {
+    background: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.footer {
+    width: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+select, option {
+    color: black;
+}
+
+.loading::after {
+    font-family: FONTAWESOME;
+    content: '\d';
+}
+
+.spinner-video {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    animation: spinner 5s infinite;
+    width: 30px;
+    height: 30px;
+}
+
+.spinner-video::after {
+    font-family: FONTAWESOME;
+    content: '\f013';
+    font-size: 30px;
+    
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

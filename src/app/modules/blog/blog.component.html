@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="bar">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <div *ngIf="!altRoute">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- search -->
+                <form class="search" #f="ngForm" (submit)="search(f)">
+                    <div class="form-group">
+                        <label for="query">Search Blog</label>
+                        <input class="form-control" type="text" name="query" [(ngModel)]="query" #queryModel="ngModel" pattern="[A-Za-z]{1,16}" required>
+                    </div>
+                    <button class="btn btn-default" type="submit" [disabled]="f.invalid">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="main">
+                    <div class="list">
+                        <!-- write icon -->
+                        <a class="pull-right write" title="create" [routerLink]="['/blog', 'write']"></a>
+                        <!-- filter -->
+                        <div class="nav">
+                            <span (click)="openFilter = !openFilter" class="open-filter pointer"></span>
+                            <form class="filter-form" #r="ngForm" (submit)="filter(r)">
+                                <div *ngIf="openFilter" class="categories">
+                                    <label for="category">category</label>
+                                    <select class="form-control" id="category" name="category" [(ngModel)]="filters.category" #categoryFilter="ngModel"> 
+                                        <option *ngFor="let cat of categories" value="{{ cat }}">{{ cat }}</option>
+                                    </select>
+                                </div>
+                                <div *ngIf="openFilter" class="filter">
+                                    <label for="sort">sort by</label>
+                                    <select class="form-control" id="sort" name="sort" [(ngModel)]="filters.sort" #sortFilter="ngModel"> 
+                                        <option *ngFor="let s of sortValues" value="{{ s }}">{{ s }}</option>
+                                    </select>
+                                </div>
+                                <div *ngIf="openFilter">
+                                    <button 
+                                        type="submit"
+                                        class="btn btn-default">Filter
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- the search result text -->
+                        <div *ngIf="searchResult.searched == true">
+                            <span [innerHTML]="searchResult.resultPhrase">
+                            </span>
+                            <span class="result">{{ searchResult.result }} 
+                                <a 
+                                    class="pointer clear-result" 
+                                    *ngIf="searchResult.found"
+                                    (click)="clearResult()">x</a>
+                            </span>
+                        </div>
+                        
+                        <!-- rows -->
+                        <div class="labels">
+                            <p class="title">title</p>
+                            <p class="cat truncate">category</p>
+                            <p class="date truncate">uploaded</p>
+                        </div>
+                        <a 
+                            *ngFor="let b of blogs; let i = index" 
+                            (click)="handleRoute(b.id)"
+                            class="list-group-item blog pointer"
+                            >
+                            <div class="blog-labels">
+                                <h3 class="title2 pointer truncate" title="{{ b.title }}">{{ b.title }}</h3>
+                                <p class="cat2 truncate">{{ b.category }}</p>
+                                <p class="date2 truncate">{{ b.when }}</p>
+                            </div>
+                        </a>
+                        <!-- page arrows -->
+                        <div class="page-turns">
+                            <span (click)="previousPage()" class="left-arrow arrow blog-arrow" [ngClass]="{'dead-pointer': disablePrevious, 'pointer': !disablePrevious}">previous</span>
+                            <span (click)="nextPage()" class="right-arrow arrow pointer" [ngClass]="{'dead-pointer': disableNext, 'pointer': !disableNext}">next</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

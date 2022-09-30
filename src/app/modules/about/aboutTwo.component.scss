@@ -1,0 +1,302 @@
+/*global*/
+@import '../../app.component.scss';
+
+/*each sub section that hold items directly*/
+/*first sub section*/
+
+.sub-section-1 {
+    position: relative;
+}
+
+    .interview {
+        letter-spacing: 1px;
+        font-size: 16px;
+        color: rgb(144, 164, 255);
+        margin-top: 2px;
+    }
+
+.sub-section-2, .sub-section-3 {
+    margin-top: 100px;
+}
+
+/*second sub section*/
+.sub-section-4, .sub-section-5, .sub-section-6 {
+    border-top: solid 1px rgb(51, 51, 51);
+    margin-top: 100px;
+    padding-top: 80px;
+}
+
+.sub-section-4 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.para-figure {
+    flex: 1;
+    width: 85%;
+    min-width: 550px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#exp-figure {
+    flex: 1;
+    margin: 0 auto;
+}
+
+.exp-img {
+    background: url('/assets/images/prov-1.png') no-repeat, url('/assets/images/prov-2.png') no-repeat, url('/assets/images/prov-3.png') no-repeat;
+    background-position: center, center, center;
+    background-size: cover, cover, cover;
+    height: 400px;
+    width: 90%;
+    display: flex;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.exp-img:hover {
+    transform: scale(1.02, 1.01);
+}
+
+.exp-img-active {
+    animation: swap 4s ease infinite;
+}
+
+@keyframes swap {
+    0%, 100% {
+        background-size: 0%, cover, 0%;
+    }
+    32% {
+        background-size: 0%, cover, 0%;
+    }
+    33% {
+        background-size: 0%, 0%, cover;
+    }
+    65% {
+        background-size: 0%, 0%, cover;
+    }
+    66% {
+        background-size: cover, 0%, 0%;
+    }
+    99% {
+        background-size: cover, 0%, 0%;
+    }
+}
+
+    .exp-caption {
+        width: 100%;
+        margin: 2px auto 0;
+    }
+
+    .para li {
+        line-height: 30px;
+    }
+
+    .indent {
+        margin-left: 9px;
+        color: rgb(182, 182, 182);
+        font-size: 16px;
+    }
+
+/*third sub section*/
+.para-skills, .skill-list, .copy-skill-list, #skills {
+    display: flex;
+}
+
+.copy-skill-list {
+    display: flex;
+    justify-content: center;
+
+}
+
+    .para-skills {
+        flex-direction: column-reverse;
+    }
+
+    #skills {
+        flex-direction: column;
+    }
+
+    .skill-details {
+        background: rgb(32, 32, 32);
+        padding: 10px;
+    }
+
+    .skill-details, .copy-skill-list {
+        flex: 1;
+    }
+
+    .skill-details ul {
+        width: 90%;
+        margin: auto;
+        padding: 0 10px 10px;
+        text-align: center;
+    }
+
+    .skill-details li {
+        font-size: 16px;
+    }
+    
+
+
+/*fourth sub section*/
+.cert {
+    width: 50%;
+    margin: 40px auto 10px;
+    padding: 10px;
+}
+
+@media (max-width: 1210px) {
+   .para-figure, exp-figure {
+       width: 75%;
+   }
+
+   .sub-section-4 p, .sub-section ul, .cert {
+       width: 70%;
+       margin: auto;
+   }
+
+   .para-skills {
+       flex-direction: column-reverse;
+   }
+
+   .icon {
+       justify-content: center;
+   }
+
+   .skill-details li {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+   }
+
+   .exp-img {
+       width: 100%;
+   }
+}
+
+@media (max-width: 950px) {
+    .para-figure, #exp-figure {
+        width: 80%;
+    }
+
+    .sub-section-4 p, .sub-section-4 ul {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill-details ul {
+        width: 95%;
+        padding: 0 0px 10px;
+    }
+}
+
+@media (max-width: 817px) {
+    .skill-details ul {
+        width: 98%;
+    }
+
+    .cert {
+        width: 95%;
+    }
+
+    #exp-figure, .para-figure {
+        width: 90%;
+    }
+
+    .para-figure {
+        min-width: 250px;
+        height: 340px;
+        min-height: 250px;
+    }
+
+    .exp-img {
+        height: 350px;
+    }
+}
+
+@media(max-width: 600px) {
+    #exp-figure, .para-figure {
+        width: 95%;
+    }
+
+    .para-figure {
+        @include same(height, min-height, 200px);
+    }
+
+
+    .sub-section-4 li {
+        font-size: 18px;
+    }
+
+    .skill-details {
+        width: auto;
+        padding: 5px;
+    }
+
+    .skill-details li {
+        padding-bottom: 17px;
+        line-height: 22px;
+    }
+
+    .skill-list {
+        padding: 20px 0;
+    }
+
+    .cert {
+        width: 98%;
+    }
+
+    .cert p, .cert a {
+        padding-top: 10px;
+    }
+
+    .sub-section-4 .para {
+        padding-top: 80px;
+    }
+
+    .exp-img {
+        height: 300px;
+    }
+
+    .icon {
+        padding: 0 15px 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .exp-caption {
+        width: 99%;
+    }
+
+    .icon {
+        font-size: 36px;
+    }
+
+    .skill-details li {
+        text-align: center;
+    }
+
+    .exp-img {
+        height: 200px;
+    }
+
+    .icon {
+        padding: 0 10px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .copy-skill-list {
+        flex-direction: column;
+    }
+}

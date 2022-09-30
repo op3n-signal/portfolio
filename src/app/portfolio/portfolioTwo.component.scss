@@ -1,0 +1,56 @@
+@import '../app.component.scss';
+
+.border {
+    border: solid 1px rgb(19, 19, 19);
+    font-size: 32px;
+}
+
+@media(max-width: 1450px) {
+    .container {
+        margin-top: 80px;
+        border-top: unset;
+    }
+}
+
+@media (max-width: 1040px) {
+    .main-content {
+        flex-direction: column;
+        min-height: 700px;
+        justify-content: start;
+        
+    }
+
+    .project-photo {
+        flex: 1.5;
+        margin: auto;
+        @include same(min-height, max-height, 400px);
+    }
+
+    .project-info {
+        margin: 30px auto 0px;
+    }
+}
+
+.icon-0 {
+    font-size: 20px;
+    display: none;
+}
+
+.show-icon {
+    display: inline;
+}
+
+
+@media (max-width: 580px) {
+    .project-photo {
+        min-width: 99%;
+    }
+
+    
+}
+
+@media (max-width: 450px) {
+    .project-info {
+        min-width: 99%;
+    }
+}

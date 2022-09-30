@@ -1,0 +1,56 @@
+@import '../app.component.scss';
+
+h5 {
+    color: white;
+    width: 90%;
+    display: flex;
+    margin: 0 auto 5px;
+}
+
+.video-container {
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+.vid {
+    width: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 3px;
+    margin: auto;
+}
+
+
+.vid-slide:hover {
+    transform: scale(1.01);
+}
+
+.vid-slide-active {
+    animation: video 2.5s ease;
+    opacity: 1;
+}
+
+
+@keyframes video {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .vid, .title {
+        width: calc(100vw - 20px);
+        max-height: 200px;
+    }
+}

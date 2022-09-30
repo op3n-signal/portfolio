@@ -1,0 +1,141 @@
+@import '../app.component.scss';
+
+/*global*/ 
+* {
+    @include same(padding, margin, letter-spacing, 0);
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    width: 95%;
+    margin: 20px auto 40px;
+}
+
+.heading {
+    padding-left: 20px;
+    width: 122px;
+    margin: 10px 0 0;
+}
+  
+    .icon {
+        padding: 0px 10px;
+        color: white;
+        font-size: 2rem;
+    }
+
+    .dev {
+        color: rgb(51, 192, 173);
+        font-size: 18px;
+    }
+
+/*bottom area*/ 
+.something {
+    padding: 5px 0 0 40px;
+}
+
+li {
+    line-height: 35px;
+    font-size: 1.55rem;
+}
+
+a {
+    color: rgb(211, 211, 211);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logos {
+    margin-right: 35px;
+    width: 45px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logos span {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+.linked::after {
+    @include logo('\f08c', rgb(24, 83, 160), 45px);
+}
+
+
+.github::after {
+    @include logo('\f09b', rgb(99, 99, 99), 45px);
+}
+
+/*email sub input thing*/
+#list {
+    color: white;
+}
+
+.more-text {
+    width: 95%;
+    margin: 10px auto 40px;
+    border-top: solid 1px rgb(29, 29, 29);
+}
+
+.more-text p {
+    text-align: center;
+    color: white;
+    padding: 20px 0 10px;
+    font-size: 1.9rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    @include same(justify-content, align-items, center);
+}
+
+    .sub-input {
+        width: 300px;
+        padding: 2px;
+        margin: 0 auto 5px;
+    }
+
+    .text-input {
+        @extend .sub-input;
+        height: 80px;
+        @include same(min-height, max-height, 140px);
+        @include same(min-width, max-width, 300px);
+        resize: none;
+    }
+
+    .btn {
+        padding: 3px 5px;
+    }
+
+.bottom {
+    margin: 0 0 40px;
+}
+
+.to-top {
+    padding-left: 40px;
+}
+
+@media(max-width: 490px) {
+    .more-text {
+        width: 90%;
+    }
+}
+
+@media (max-width: 420px) {
+    .sub-input {
+        width: 65vw;
+    }
+}
+
+.center-block {
+    text-align: center;
+}

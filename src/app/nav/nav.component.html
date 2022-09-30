@@ -1,0 +1,28 @@
+<header>
+    <div class="heading heading-burger-show-late">
+        <a class="icon pointer" routerLink="/">Client <span class="dev">dev</span></a>
+    </div>
+    <div class="burger pointer heading-burger-show-late" (click)="toggleNav($event)" #burger>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li><a (click)="pageRequest()" routerLink="/about">About me</a></li>
+            <li><a (click)="pageRequest()" routerLink="/dev-tv">DevTV</a></li>
+            <li><a (click)="pageRequest()" routerLink="/projects">Projects</a></li>
+            <li><a (click)="pageRequest()" routerLink="/blog" [queryParams]="{page: 1}">Blog</a></li>
+            <div class="drop-down pointer" (mouseover)="dropDown(list)" (mouseleave)="removeDrop()" #dropDown1>More
+                <ul class="drop-list" #list>
+                    <li><a (click)="pageRequest()" href="#" routerLink="/login">Login</a></li>
+                    <li><a (click)="pageRequest()" href="#" routerLink="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-mobile" #dropDown2>
+                <li><a (click)="pageRequest()" href="#" routerLink="/login">Login</a></li>
+                <li><a (click)="pageRequest()" href="#" routerLink="/contact">Contact</a></li>
+            </div>
+        </ul>
+    </nav>
+</header>
